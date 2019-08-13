@@ -16,3 +16,4 @@ alias p='python3'
 alias v='vim'
 alias vimrc='vim .config/nvim/init.vim'
 alias ls='ls -hN --color=auto --group-directories-first'
+alias jn="jupyter notebook"
