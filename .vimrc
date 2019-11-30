@@ -10,43 +10,16 @@ filetype plugin on
 set path+=**
 set wildmenu
 set clipboard=unnamed
-let mapleader =","
 let g:python3_host_prog='/usr/bin/python3.6'
+let mapleader =","
 
 call plug#begin()
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
-    Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-path'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'vim-airline/vim-airline'
+Plug 'junegunn/goyo.vim'
+Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
-" Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_uk<CR>
-
-" Nerd tree
-	map <leader>n :NERDTreeToggle<CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-    " suppress the annoying 'match x of y', 'The only match' and 'Pattern not found messages
-    set shortmess+=c
-
-    " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-    inoremap <c-c> <ESC>
-
-    autocmd BufEnter * call ncm2#enable_for_buffer()
-
-    set completeopt=noinsert,menuone,noselect
-
-" folding
-set foldmethod=indent
-set foldlevel=99
-nnoremap <space> za
+map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+map <leader>o :setlocal spell! spelllang=en_gb<CR>
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -55,5 +28,4 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
-    \ set fileformat=unix 
-
+    \ set fileformat=unix
