@@ -19,4 +19,6 @@ map N restoreTab
 
 map , visitPreviousTab
 map . Marks.activateGotoMode
+
+unmap /
 ```
