@@ -11,8 +11,6 @@ map l goForward
 map x restoreTab
 map X removeTab
 
-map w removeTab
-map W restoreTab
 
 map n removeTab
 map N restoreTab
@@ -20,5 +18,8 @@ map N restoreTab
 map , visitPreviousTab
 map . Marks.activateGotoMode
 
+unmap .
+unmap m
+unmap M
 unmap /
 ```
